@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="25" viewBox="0 0 35 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #333;
+        fill-rule: evenodd;
+        opacity: 0.8;
+      }
+    </style>
+  </defs>
+  <path id="ListView_copy_11" data-name="ListView copy 11" class="cls-1" d="M3770,273h35v3h-35v-3Zm13,11h22v3h-22v-3Zm-10,11h32v3h-32v-3Z" transform="translate(-3770 -273)"/>
+</svg>

@@ -1,0 +1,7 @@
+{
+  "name": "pooja_practical",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

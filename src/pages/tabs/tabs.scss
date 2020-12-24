@@ -1,0 +1,42 @@
+page-tabs {
+    .tabs-md .tabbar {
+        background: #333333;
+        color: #fff
+    }
+    .tabs-ios .tabbar {
+        background: #333333;
+        color: #fff
+    }
+    .tabs-md .tab-button[aria-selected=true] {
+        background:  color($colors,primary);
+        color: white;
+    }
+
+    .tabs-ios .tab-button[aria-selected=true] {
+        background:  color($colors,primary);
+        color: white;
+    }
+
+    .tabs-md .tab-button[aria-selected=true]  .tab-button-icon {
+        color: #fff;
+    }
+    .tabs-md  .tab-button-icon {
+        color: #fff;
+    }
+    .tabs-ios .tab-button-icon {
+        color: #fff;
+    }
+    .tabs-ios .tab-button[aria-selected=true]  .tab-button-icon {
+        color: #fff;
+    }
+
+    .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
+        color: #fff;
+    }
+    .tabs-ios[tabsLayout=icon-top] .has-icon .tab-button-text {
+        color: #fff;
+    }
+    .tab-badge {
+        background: color($colors, appgreen);
+    }
+}

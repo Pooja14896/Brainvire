@@ -1,0 +1,40 @@
+<ion-menu  type="reveal" side="left" [content]="content" persistent="true">
+    <ion-header>
+        <div class="header_div">
+            <ion-label color="light" class="menu_header_lbl">Welcome User!</ion-label>
+        </div>
+    </ion-header>
+    <ion-content class="menu_content">
+        <div *ngFor="let data of pages" >
+            <div *ngIf="data.parent == 0 && data.submenu == true">
+                <ion-row no-margin no-padding >
+                    <ion-col col-10 class="col_center" (click)="opensubmenu(data)">
+                        <ion-label color="light" class="menu_lbl">{{data.title}}</ion-label>
+                    </ion-col>
+                    <ion-col col-2 class="col_center" *ngIf="data.submenu == true">
+                        <ion-icon name="md-add" *ngIf="data.id != this.Parent" class="menu_icon" (click)="opensubmenu(data)"></ion-icon>
+                        <ion-icon name="md-remove" *ngIf="data.id == this.Parent && openmenu == true" class="menu_icon" (click)="closesubmenu(data)"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div *ngIf="data.parent == 0 && data.submenu == false">
+                <ion-row no-margin no-padding >
+                    <ion-col col-10 class="col_center" (click)="gotoPage(data)" menuClose>
+                        <ion-label color="light" class="menu_lbl">{{data.title}}</ion-label>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <div *ngIf="data.parent == this.Parent && openmenu == true" >
+                <ion-row no-margin no-padding >
+                    <ion-col col-2 class="col_center">
+                    </ion-col>
+                    <ion-col col-10 class="col_center" (click)="gotoPage(data)" menuClose>
+                        <ion-label color="light" class="menu_lbl2">{{data.title}}</ion-label>
+                    </ion-col>
+                  </ion-row>
+            </div>
+           
+        </div>
+    </ion-content>
+</ion-menu>
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

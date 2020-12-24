@@ -1,0 +1,18 @@
+page-cart {
+    .product_lbl{
+        font-size: 14px;
+        padding-left: 8px;
+    }
+    
+    .price_lbl{
+        font-size: 14px;
+        padding-left: 8px;
+    }
+    
+    .oldprice_lbl{
+        font-size: 15px;
+        padding-left: 8px;
+        text-decoration: line-through;
+        color: grey;
+    }
+}

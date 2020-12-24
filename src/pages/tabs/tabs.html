@@ -1,0 +1,7 @@
+<ion-tabs #myTabs selectedIndex="{{selectedIndex}}" (ionChange)="tabSelected($event)">
+  <ion-tab [root]="HomePage"  tabTitle="Home" tabIcon="custom-home"  tabsHideOnSubPages=true></ion-tab>
+  <ion-tab [root]="OfferPage"  tabTitle="Hot Offer"  tabIcon="custom-offer" tabsHideOnSubPages=true></ion-tab>
+  <ion-tab [root]="CartPage"   tabTitle="My Cart"  tabIcon="custom-cart" tabBadge="{{CartCount}}" tabsHideOnSubPages=true></ion-tab>
+  <ion-tab [root]="SearchPage"  tabTitle="Search"  tabIcon="ios-search" tabsHideOnSubPages=true></ion-tab>
+  <ion-tab [root]="ProfilePage"  tabTitle="profile"  tabIcon="custom-profile" tabsHideOnSubPages=true></ion-tab>
+ </ion-tabs>

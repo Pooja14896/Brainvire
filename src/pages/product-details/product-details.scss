@@ -1,0 +1,22 @@
+page-product-details {
+    .product_lbl{
+        font-size: 16px;
+        font-weight: bold;
+        padding-left: 8px;
+    }
+    
+    .price_lbl{
+        font-size: 16px;
+        padding-left: 8px;
+    }
+    
+    .oldprice_lbl{
+        font-size: 16px;
+        padding-left: 8px;
+        text-decoration: line-through;
+    }
+    .btn_app{
+        font-size: 17px;
+        height: 50px;
+    }  
+}

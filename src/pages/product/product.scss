@@ -1,0 +1,26 @@
+page-product {
+    .product_lbl{
+        font-size: 14px;
+        padding-left: 8px;
+    }
+    
+    .price_lbl{
+        font-size: 14px;
+        padding-left: 8px;
+    }
+    
+    .oldprice_lbl{
+        font-size: 15px;
+        padding-left: 8px;
+        text-decoration: line-through;
+        color: grey;
+    }
+
+    .segment-md .segment-button.segment-activated {
+        border-bottom: 2px solid #41caf1;
+        opacity: 1;
+    }
+    .segment-md .segment-button {
+         border: 0px solid;
+    }
+}

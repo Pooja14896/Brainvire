@@ -1,0 +1,115 @@
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col col-8 style="align-self: center;">
+      <img src="../../assets/imgs/Shop cart copy.png" style="height: 35px;width:auto;" />
+    </ion-col>
+    <ion-col col-4 style="align-self: center;text-align: end;">
+      <div no-margin no-padding style="display: flex;" (click)="SkipClick()">
+        <ion-label class="skip_lbl">Skip</ion-label>
+        <ion-icon name="ios-arrow-forward" style="align-self: center; font-size: 25px;"></ion-icon>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div>
+
+    <div style="margin: auto;display: table;">
+      <ion-label *ngIf="loginlbl=='signin'" class="big_lbl" >Sign In</ion-label>
+      <ion-label *ngIf="loginlbl=='signup'" class="big_lbl" >Sign Up</ion-label>
+      <div class="main_line">
+        <div [ngClass]="loginlbl=='signin' ? 'line1' : 'line2'" (click)="selectlabel('signin')"></div>
+        <div [ngClass]="loginlbl=='signup' ? 'line1' : 'line2'"  (click)="selectlabel('signup')"></div>
+      </div>
+    </div> 
+  
+    <!-- Login design  -->
+    <div *ngIf="loginlbl=='signin'" >
+      <div style="margin: 20px 0">
+        <ion-item style="background: transparent;">
+          <ion-icon name="ios-mail-outline" item-left class="icon-size"></ion-icon>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="email"  [(ngModel)]="LEmail"></ion-input>
+        </ion-item>
+        <ion-label *ngIf="IsValidLEmail == false" class="validation_lbl"> *Please Enter Valid Email address.</ion-label>
+    
+        <ion-item style="background: transparent;">
+          <ion-icon name="ios-lock-outline" item-left class="icon-size"></ion-icon>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="{{Ltype}}" [(ngModel)]="LPassword"></ion-input>
+          <ion-icon name="eye" *ngIf="LshowPass" (click)="LshowPassword()" item-right class="eye-size"></ion-icon>
+          <ion-icon name="eye-off" *ngIf="!LshowPass" (click)="LshowPassword()" item-right class="eye-size"></ion-icon>
+        </ion-item>
+        <ion-label *ngIf="IsValidLPassword == false" class="validation_lbl"> *Password contain minimum 1 lower case,1 upper case letters, minimum 8 length and should not include special characters.</ion-label>
+    
+        <ion-label text-end>Forgot password?</ion-label>
+      </div>
+    
+      <div text-center>
+        <button ion-button round full class="btn_app"  (click)="loginClick()">Login</button>
+      </div>
+      <ion-label text-center style="font-size: 14px;">Not a User? <span  (click)="selectlabel('signup')">Sign Up</span></ion-label>
+    
+    </div>
+   
+  
+  
+  
+    <!-- Register Design -->
+    <div *ngIf="loginlbl=='signup'" >
+      <div style="margin: 20px 0"> 
+        <ion-item style="background: transparent;"> 
+          <ion-icon name="ios-person-outline" item-left class="icon-size"></ion-icon>
+          <ion-label floating>User name</ion-label>
+          <ion-input type="text" [(ngModel)]="UserName"></ion-input>
+        </ion-item>
+        <ion-label *ngIf="IsValidUserName == false" class="validation_lbl"> *Please Enter Valid Username.</ion-label>
+        <ion-label *ngIf="IsAlreadyUserName == true" class="validation_lbl"> *Username already taken.</ion-label>
+  
+        <ion-item style="background: transparent;">
+          <ion-icon name="ios-mail-outline" item-left class="icon-size"></ion-icon>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="email" [(ngModel)]="Email"></ion-input>
+        </ion-item>
+        <ion-label *ngIf="IsValidEmail == false" class="validation_lbl"> *Please Enter Valid Email address.</ion-label>
+        <ion-label *ngIf="IsAlreadyEmail == true" class="validation_lbl"> *Email address already Registered.</ion-label>
+  
+        <ion-item style="background: transparent;">
+          <ion-icon name="ios-call-outline" item-left class="icon-size"></ion-icon>
+          <ion-label floating>Mobile Number</ion-label>
+          <ion-input type="tel" [(ngModel)]="MobileNumber"></ion-input>
+        </ion-item>
+        <ion-label *ngIf="IsValidMobileNumber == false" class="validation_lbl"> *Please Enter Valid Mobile number.</ion-label>
+  
+  
+        <ion-item style="background: transparent;">
+          <ion-icon name="ios-lock-outline" item-left class="icon-size"></ion-icon>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="{{type}}" [(ngModel)]="Password"></ion-input>
+          <ion-icon name="eye" *ngIf="showPass" (click)="showPassword()" item-right class="eye-size"></ion-icon>
+          <ion-icon name="eye-off" *ngIf="!showPass" (click)="showPassword()" item-right class="eye-size"></ion-icon>
+        </ion-item>
+        <ion-label *ngIf="IsValidPassword == false" class="validation_lbl"> *Password contain minimum 1 lower case,1 upper case letters, minimum 8 length and should not include special characters.</ion-label>
+  
+        <ion-item style="background: transparent;">
+          <ion-icon name="ios-lock-outline" item-left class="icon-size"></ion-icon>
+          <ion-label floating>Confirm Password</ion-label>
+          <ion-input type="{{conf_type}}" [(ngModel)]="ConfirmPassword"></ion-input>
+          <ion-icon name="eye" *ngIf="conf_showPass" (click)="confshowPassword()" item-right class="eye-size"></ion-icon>
+          <ion-icon name="eye-off" *ngIf="!conf_showPass" (click)="confshowPassword()" item-right class="eye-size"></ion-icon>
+        </ion-item>
+        <ion-label *ngIf="IsValidConfirmPassword == false" class="validation_lbl"> *Password contain minimum 1 lower case,1 upper case letters,minimum 8 length and should not include special characters.</ion-label>
+        <ion-label *ngIf="PasswordMatch == false" class="validation_lbl"> *Confirm password not match with password.</ion-label>
+  
+      </div>
+  
+      <div text-center>
+        <button ion-button round full class="btn_app" (click)="RegisterClick()">Register</button>
+      </div>
+      <ion-label text-center style="font-size: 14px;">Already a User? <span (click)="selectlabel('signin')">Sign In</span></ion-label>
+  
+    </div>
+  </div>
+
+</ion-content>
